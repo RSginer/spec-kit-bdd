@@ -9,7 +9,6 @@ extension:
   repository: "https://github.com/RSginer/spec-kit-bdd"
   license: "MIT"
   homepage: "https://github.com/RSginer/spec-kit-bdd"
-  category: "process"
 
 requires:
   speckit_version: ">=0.2.0"
