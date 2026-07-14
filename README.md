@@ -23,13 +23,13 @@ speckit.bdd.verify
 ## Installation
 
 ```bash
-specify extension add https://github.com/your-org/spec-kit-bdd/releases/download/v1.0.0/spec-kit-bdd-1.0.0.tar.gz
+specify extension add https://github.com/RSginer/spec-kit-bdd/releases/download/v1.0.0/spec-kit-bdd-1.0.0.tar.gz
 ```
 
 Or clone and install locally for development:
 
 ```bash
-git clone https://github.com/your-org/spec-kit-bdd
+git clone https://github.com/RSginer/spec-kit-bdd
 specify extension add --dev ./spec-kit-bdd
 ```
 

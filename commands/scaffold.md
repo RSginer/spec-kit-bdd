@@ -52,19 +52,22 @@ from pytest_bdd import scenarios, given, when, then, parsers
 
 scenarios("../../features/")
 
+# context fixture (from conftest.py) is only accepted by steps that share state across Given/When/Then.
+# Steps that only set up state or only read response need no context parameter.
+
 @given("the application is running")
 def application_is_running():
-    # TODO: Start the application under test or verify it is already running
+    # TODO: Confirm the app is reachable
     raise NotImplementedError("Implement: ensure app is running")
 
 @given(parsers.parse('a user account exists with email "{email}" and password "{password}"'))
 def existing_user(email, password):
-    # TODO: Insert a test user with these credentials into the test database
-    raise NotImplementedError("Implement: create user fixture")
+    # TODO: Insert test user in database
+    raise NotImplementedError("Implement: seed user in test database")
 
 @when(parsers.parse('the user submits login with email "{email}" and password "{password}"'))
-def user_submits_login(email, password, context):
-    # TODO: POST /auth/login with {"email": email, "password": password}, store response in context["response"]
+def user_submits_login(app_client, email, password, context):
+    # TODO: POST /auth/login, store response in context["response"]
     raise NotImplementedError("Implement: submit login request")
 
 @then(parsers.parse('the error message "{message}" is displayed'))
@@ -242,7 +245,13 @@ namespace Features.StepDefinitions
 
 ## After Generation
 
-Create `features/step_definitions/README.md`:
+Create a README in the step definitions directory for the detected framework:
+- **pytest-bdd** → `tests/step_defs/README.md`
+- **behave** → `features/steps/README.md`
+- **@cucumber/cucumber (JavaScript)** → `features/step_definitions/README.md`
+- **Cucumber (Ruby)** → `features/step_definitions/README.md`
+- **io.cucumber (Java)** → `src/test/java/steps/README.md`
+- **SpecFlow (C#)** → `Features/StepDefinitions/README.md`
 
 ```markdown
 # Step Definitions

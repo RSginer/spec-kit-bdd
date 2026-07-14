@@ -62,7 +62,7 @@ Feature: User authentication
     Then the error message "Invalid credentials" is displayed
 
   Scenario: Account is locked after 5 consecutive failures
-    Given the user has failed to log in 4 times consecutively
+    Given the user has failed to log in 4 times consecutively with email "alice@example.com"
     When the user submits login with email "alice@example.com" and password "WrongPass"
     Then the error message "Account locked for 15 minutes" is displayed
     And the account is locked for 15 minutes

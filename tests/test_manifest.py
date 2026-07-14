@@ -86,3 +86,19 @@ def test_hooks_before_implement_present():
 def test_tags_present():
     tags = load_manifest().get("tags", [])
     assert len(tags) >= 2, "At least 2 tags are required for catalog discoverability"
+
+
+def test_hooks_are_optional():
+    hooks = load_manifest().get("hooks", {})
+    for hook_name, hook in hooks.items():
+        assert hook.get("optional") is True, f"Hook '{hook_name}' must have optional: true"
+
+
+def test_hook_commands_are_registered():
+    manifest = load_manifest()
+    registered = {c["name"] for c in manifest["provides"]["commands"]}
+    for hook_name, hook in manifest.get("hooks", {}).items():
+        cmd = hook.get("command", "")
+        assert cmd in registered, (
+            f"Hook '{hook_name}' references command '{cmd}' which is not in provides.commands"
+        )
