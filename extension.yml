@@ -6,9 +6,9 @@ extension:
   version: "1.0.0"
   description: "ATDD/BDD extension: convert specs to Gherkin scenarios, scaffold step definitions, and verify acceptance test coverage."
   author: "spec-kit-bdd contributors"
-  repository: "https://github.com/your-org/spec-kit-bdd"
+  repository: "https://github.com/RSginer/spec-kit-bdd"
   license: "MIT"
-  homepage: "https://github.com/your-org/spec-kit-bdd"
+  homepage: "https://github.com/RSginer/spec-kit-bdd"
 
 requires:
   speckit_version: ">=0.2.0"
