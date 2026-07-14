@@ -1,0 +1,6 @@
+# Exclude test and development files from distribution
+tests/
+requirements-dev.txt
+docs/superpowers/
+.gitignore
+.extensionignore
