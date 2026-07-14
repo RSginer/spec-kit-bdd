@@ -6,3 +6,4 @@ dist/
 .venv/
 venv/
 *.local.yml
+docs/superpowers/
