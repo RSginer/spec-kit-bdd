@@ -23,7 +23,7 @@ speckit.bdd.verify
 ## Installation
 
 ```bash
-specify extension add bdd
+specify extension add bdd --from https://github.com/RSginer/spec-kit-bdd/archive/refs/tags/v1.0.2.zip
 ```
 
 ## Usage
