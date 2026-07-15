@@ -17,7 +17,7 @@ This extension enforces that order:
 
 ### `/speckit.bdd.scenarios [optional-focus]`
 
-Reads `.specify/specify.md` and generates `features/*.feature` files.
+Reads the active feature's `spec.md` (resolved via `SPECIFY_FEATURE_DIRECTORY` or `.specify/feature.json`, e.g. `specs/003-user-auth/spec.md`) and generates `features/*.feature` files.
 
 Pass an optional argument to focus on a subset:
 ```
