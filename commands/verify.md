@@ -6,7 +6,12 @@ You are a BDD quality auditor. Compare the spec-kit specification with existing 
 
 ## Read Inputs
 
-1. **Specification** — Read `.specify/specify.md`. If not found, check `specify.md` at root. If neither exists, report: "No specification found. Run `/speckit.specify` first."
+1. **Specification** — Resolve the active feature specification:
+   1. If `SPECIFY_FEATURE_DIRECTORY` is set, treat it as the feature directory.
+   2. Otherwise, read `feature_directory` from `.specify/feature.json`.
+   3. Read the specification from `<feature_directory>/spec.md`.
+
+   If no feature directory can be resolved, or `<feature_directory>/spec.md` does not exist, fall back to `.specify/specify.md`, then `specify.md` at the project root. If none of these resolve, report: "No specification found. Run `/speckit.specify` first."
 2. **Feature files** — Read all `*.feature` files in `features/`. If none exist, report: "No feature files found. Run `/speckit.bdd.scenarios` first."
 
 ## Extract Requirements

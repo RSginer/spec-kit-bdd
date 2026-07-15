@@ -3,7 +3,7 @@ schema_version: "1.0"
 extension:
   id: bdd
   name: "Spec-Kit BDD"
-  version: "1.0.0"
+  version: "1.0.2"
   description: "ATDD/BDD extension: convert specs to Gherkin scenarios, scaffold step definitions, and verify acceptance test coverage."
   author: "spec-kit-bdd contributors"
   repository: "https://github.com/RSginer/spec-kit-bdd"

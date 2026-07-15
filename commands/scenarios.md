@@ -6,9 +6,13 @@ You are a BDD expert applying Acceptance Test-Driven Development (ATDD). Read th
 
 ## Read the Specification
 
-Read `.specify/specify.md`. This document contains the requirements and acceptance criteria for the feature being built.
+Resolve the active feature specification:
 
-If `.specify/specify.md` does not exist, check for `specify.md` at the project root. If neither exists, tell the user: "No spec-kit specification found. Run `/speckit.specify` first, then re-run this command."
+1. If `SPECIFY_FEATURE_DIRECTORY` is set, treat it as the feature directory.
+2. Otherwise, read `feature_directory` from `.specify/feature.json`.
+3. Read the specification from `<feature_directory>/spec.md`.
+
+If no feature directory can be resolved, or `<feature_directory>/spec.md` does not exist, fall back to `.specify/specify.md`, then `specify.md` at the project root. If none of these resolve, tell the user: "No spec-kit specification found. Run `/speckit.specify` first, then re-run this command."
 
 ## Generate Feature Files
 
