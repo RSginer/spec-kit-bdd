@@ -2,7 +2,7 @@
 
 A [spec-kit](https://github.com/github/spec-kit) community extension that adds Behavior-Driven Development (BDD) and Acceptance Test-Driven Development (ATDD) to the spec-driven workflow.
 
-## Why
+## Why?
 
 Lean software development treats anything that doesn't directly deliver value to the user as waste — rework from misread requirements, code built against specs nobody validated, defects caught late instead of early. W. Edwards Deming's core teaching, later formalized for software in Mary and Tom Poppendieck's *Lean Software Development: An Agile Toolkit*, is to build quality into the process instead of inspecting for it afterward.
 
