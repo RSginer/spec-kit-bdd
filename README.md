@@ -4,7 +4,7 @@ A [spec-kit](https://github.com/github/spec-kit) community extension that adds B
 
 ## Why?
 
-Lean software development treats anything that doesn't directly deliver value to the user as waste — rework from misread requirements, code built against specs nobody validated, defects caught late instead of early. W. Edwards Deming's core teaching, later formalized for software in Mary and Tom Poppendieck's *Lean Software Development: An Agile Toolkit*, is to build quality into the process instead of inspecting for it afterward.
+Lean software development treats anything that doesn't directly deliver value to the user as waste — rework from misread requirements, code built against specs nobody validated, defects caught late instead of early. [W. Edwards Deming's](https://es.wikipedia.org/wiki/William_Edwards_Deming) core teaching, later formalized for software in [Mary](https://es.wikipedia.org/wiki/Mary_Poppendieck) and [Tom Poppendieck's](https://www.goodreads.com/author/show/113318.Tom_Poppendieck) [Lean Software Development: An Agile Toolkit](https://ptgmedia.pearsoncmg.com/images/9780321150783/samplepages/0321150783.pdf), is to build quality into the process instead of inspecting for it afterward.
 
 BDD/ATDD is how spec-kit-bdd applies that here: acceptance criteria become executable Gherkin scenarios *before* implementation starts, and step definitions fail (RED) until the code they describe actually satisfies them (GREEN). Ambiguity in a spec surfaces as a failing scenario before any code is written, instead of as a bug report or a misaligned feature after the fact — the same reduction in waste from rework and overproduction that Deming's approach targets.
 
