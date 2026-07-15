@@ -36,8 +36,8 @@ root — no `backend/`/`frontend/` split, no `tests/` directory (BDD scenarios u
 
 **Purpose**: Confirm the existing scaffold's starting state before any implementation.
 
-- [ ] T001 Run `npm install` in `examples/vitest-react-todo/` to confirm dependencies resolve (no new dependencies needed — stack is fixed by the constitution's Additional Constraints)
-- [ ] T002 [P] Run `npx tsc --noEmit` (must pass) and `npm test` (must show 81/81 failing with `Pending: ...` errors) to confirm the Red baseline before implementation begins
+- [X] T001 Run `npm install` in `examples/vitest-react-todo/` to confirm dependencies resolve (no new dependencies needed — stack is fixed by the constitution's Additional Constraints)
+- [X] T002 [P] Run `npx tsc --noEmit` (must pass) and `npm test` (must show 81/81 failing with `Pending: ...` errors) to confirm the Red baseline before implementation begins
 
 ---
 
@@ -48,8 +48,8 @@ user stories (every feature file asserts "the weekly task list shows/does not sh
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T003 Define the `Task` type and pure helpers `getWeekRange(today)`, `isDueThisWeek(task, range)`, `sortByDueDate(tasks)` in `src/task.ts`, per `data-model.md` and `research.md` §2 & §4
-- [ ] T004 In `src/TodoApp.tsx`: add an `initialTasks?: Task[]` prop (deterministic test seeding — used by the `Given a task "..." due "..."` background steps in `view-weekly-tasks.feature` and `mark-task-complete.feature`), `useState<Task[]>(initialTasks ?? [])` task state, and render the weekly list container (`<ul aria-label="Weekly task list">` with one `<li role="listitem">` per task showing its title) from `sortByDueDate(tasks.filter(t => isDueThisWeek(t, getWeekRange(new Date()))))` — depends on T003
+- [X] T003 Define the `Task` type and pure helpers `getWeekRange(today)`, `isDueThisWeek(task, range)`, `sortByDueDate(tasks)` in `src/task.ts`, per `data-model.md` and `research.md` §2 & §4
+- [X] T004 In `src/TodoApp.tsx`: add an `initialTasks?: Task[]` prop (deterministic test seeding — used by the `Given a task "..." due "..."` background steps in `view-weekly-tasks.feature` and `mark-task-complete.feature`), `useState<Task[]>(initialTasks ?? [])` task state, and render the weekly list container (`<ul aria-label="Weekly task list">` with one `<li role="listitem">` per task showing its title) from `sortByDueDate(tasks.filter(t => isDueThisWeek(t, getWeekRange(new Date()))))` — depends on T003
 
 **Checkpoint**: Foundation ready — user story implementation can now begin.
 
@@ -64,10 +64,10 @@ earliest-first, flags a task due today, and shows a message when the list is emp
 week boundary (using `vi.setSystemTime` to control "today"), and assert per
 `features/view-weekly-tasks.feature` — no dependency on US2 or US3.
 
-- [ ] T005 [US1] Implement `isDueToday(task, today)` in `src/task.ts` and render a "Due today" indicator inside each task row in `src/TodoApp.tsx` when true, per `contracts/ui-contract.md` — depends on T004
-- [ ] T006 [US1] Render "No tasks due this week" in `src/TodoApp.tsx` in place of the list when the filtered weekly list is empty, per `contracts/ui-contract.md` — depends on T004
-- [ ] T007 [US1] Implement the failing steps in `features/step_definitions/view-weekly-tasks.steps.ts` — seed tasks via the `initialTasks` prop, freeze "today" via `vi.setSystemTime`, assert via the `screen`/`within` queries defined in `contracts/ui-contract.md` — replace every `throw new Error('Pending: ...')` — depends on T005, T006
-- [ ] T008 [US1] Run `npx vitest run features/step_definitions/view-weekly-tasks.steps.ts` and confirm all steps pass — depends on T007
+- [X] T005 [US1] Implement `isDueToday(task, today)` in `src/task.ts` and render a "Due today" indicator inside each task row in `src/TodoApp.tsx` when true, per `contracts/ui-contract.md` — depends on T004
+- [X] T006 [US1] Render "No tasks due this week" in `src/TodoApp.tsx` in place of the list when the filtered weekly list is empty, per `contracts/ui-contract.md` — depends on T004
+- [X] T007 [US1] Implement the failing steps in `features/step_definitions/view-weekly-tasks.steps.tsx` (renamed from `.ts` — needs JSX to render `<TodoApp />`) — seed tasks via the `initialTasks` prop, freeze "today" via `vi.setSystemTime`, assert via the `screen`/`within` queries defined in `contracts/ui-contract.md` — replace every `throw new Error('Pending: ...')` — depends on T005, T006
+- [X] T008 [US1] Run `npx vitest run features/step_definitions/view-weekly-tasks.steps.tsx` and confirm all steps pass (44/44 green) — depends on T007
 
 **Checkpoint**: User Story 1 is fully functional and independently testable — this is the MVP.
 
@@ -82,11 +82,11 @@ validation message and no state change; valid ones appear in the weekly list bui
 `features/add-task.feature`. Relies on US1's list rendering to observe results (per spec.md's
 stated story dependency), but adds no new dependency on US3.
 
-- [ ] T009 [US2] Add the add-task form (labelled "Title" input, labelled "Due date" input, "Add task" submit button) to `src/TodoApp.tsx`, per `contracts/ui-contract.md` — depends on T004
-- [ ] T010 [US2] Implement client-side validation in the submit handler — non-empty trimmed title, non-empty due date — rendering "Title is required" / "Due date is required" and leaving task state unchanged on failure, per `data-model.md` Validation summary — depends on T009
-- [ ] T011 [US2] On successful validation, append a new `Task` (`id: crypto.randomUUID()`, `completed: false`) to state in `src/TodoApp.tsx` — depends on T010
-- [ ] T012 [US2] Implement the failing steps in `features/step_definitions/add-task.steps.ts` — drive the form via `userEvent`, assert via `contracts/ui-contract.md` queries — replace every `throw new Error('Pending: ...')` — depends on T011
-- [ ] T013 [US2] Run `npx vitest run features/step_definitions/add-task.steps.ts` and confirm all steps pass — depends on T012
+- [X] T009 [US2] Add the add-task form (labelled "Title" input, labelled "Due date" input, "Add task" submit button) to `src/TodoApp.tsx`, per `contracts/ui-contract.md` — depends on T004
+- [X] T010 [US2] Implement client-side validation in the submit handler — non-empty trimmed title, non-empty due date — rendering "Title is required" / "Due date is required" and leaving task state unchanged on failure, per `data-model.md` Validation summary — depends on T009
+- [X] T011 [US2] On successful validation, append a new `Task` (`id: crypto.randomUUID()`, `completed: false`) to state in `src/TodoApp.tsx` — depends on T010
+- [X] T012 [US2] Implement the failing steps in `features/step_definitions/add-task.steps.tsx` (renamed from `.ts` for JSX; `vi.useFakeTimers({ shouldAdvanceTime: true })` needed — plain `useFakeTimers()` hangs `userEvent` clicks/typing) — drive the form via `userEvent`, assert via `contracts/ui-contract.md` queries — replace every `throw new Error('Pending: ...')` — depends on T011
+- [X] T013 [US2] Run `npx vitest run features/step_definitions/add-task.steps.tsx` and confirm all steps pass (26/26 green) — depends on T012
 
 **Checkpoint**: User Stories 1 AND 2 both work independently.
 
@@ -101,10 +101,10 @@ visible in the list either way.
 per `features/mark-task-complete.feature` — no dependency on US2 (uses `initialTasks` seeding from
 Foundational, same as US1).
 
-- [ ] T014 [US3] Add a completion checkbox (`role="checkbox"`, accessible name = task title, `checked` bound to `task.completed`) to each task row in `src/TodoApp.tsx`, per `contracts/ui-contract.md` — depends on T004
-- [ ] T015 [US3] Wire the checkbox's change handler to toggle that task's `completed` field by `id` in `src/TodoApp.tsx` state — depends on T014
-- [ ] T016 [US3] Implement the failing steps in `features/step_definitions/mark-task-complete.steps.ts` — seed via `initialTasks`, toggle via `userEvent.click`, assert checkbox state via `contracts/ui-contract.md` queries — replace every `throw new Error('Pending: ...')` — depends on T015
-- [ ] T017 [US3] Run `npx vitest run features/step_definitions/mark-task-complete.steps.ts` and confirm all steps pass — depends on T016
+- [X] T014 [US3] Add a completion checkbox (`role="checkbox"`, accessible name = task title, `checked` bound to `task.completed`) to each task row in `src/TodoApp.tsx`, per `contracts/ui-contract.md` — depends on T004
+- [X] T015 [US3] Wire the checkbox's change handler to toggle that task's `completed` field by `id` in `src/TodoApp.tsx` state — depends on T014
+- [X] T016 [US3] Implement the failing steps in `features/step_definitions/mark-task-complete.steps.tsx` (renamed from `.ts` for JSX) — seed via `initialTasks`, toggle via `userEvent.click`, assert checkbox state via `contracts/ui-contract.md` queries — replace every `throw new Error('Pending: ...')` — depends on T015
+- [X] T017 [US3] Run `npx vitest run features/step_definitions/mark-task-complete.steps.tsx` and confirm all steps pass (11/11 green) — depends on T016
 
 **Checkpoint**: All three user stories are independently functional.
 
@@ -114,11 +114,11 @@ Foundational, same as US1).
 
 **Purpose**: Whole-suite verification once all three stories are implemented.
 
-- [ ] T018 [P] Run `npx tsc --noEmit` and resolve any `strict` / `noUnusedLocals` / `noUnusedParameters` violations across `src/` and `features/` (constitution Principle III)
-- [ ] T019 Run `npm test` and confirm all 81 scenario steps pass (constitution Principle II Green state)
-- [ ] T020 [P] Run `npm run build` and confirm it succeeds
-- [ ] T021 Walk through `quickstart.md` end-to-end and confirm the documented commands match actual behavior
-- [ ] T022 Cross-check the FR → scenario → step traceability table in `plan.md`'s Constitution Check section against the final implementation; resolve any orphan requirement or scenario (constitution Principle V) — this is what `speckit.bdd.verify` automates
+- [X] T018 [P] Run `npx tsc --noEmit` and resolve any `strict` / `noUnusedLocals` / `noUnusedParameters` violations across `src/` and `features/` (constitution Principle III) — clean, no violations
+- [X] T019 Run `npm test` and confirm all 81 scenario steps pass (constitution Principle II Green state) — 81/81 green
+- [X] T020 [P] Run `npm run build` and confirm it succeeds — succeeds
+- [X] T021 Walk through `quickstart.md` end-to-end and confirm the documented commands match actual behavior — `npm install`, `npm test`, `npm run build`, `npm run dev` all verified
+- [X] T022 Cross-check the FR → scenario → step traceability table in `plan.md`'s Constitution Check section against the final implementation; resolve any orphan requirement or scenario (constitution Principle V) — found FR-003 ("each task entry MUST show its title, due date, and completion status") only partially implemented (due date was missing from the UI); added a `<time>` element per task row and fixed two now-ambiguous text queries in `view-weekly-tasks.steps.tsx` to keep them exact-match-safe. All 11 FRs now trace to implementation + a passing scenario; no orphans remain
 
 ---
 
