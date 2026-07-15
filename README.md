@@ -22,10 +22,8 @@ speckit.bdd.verify
 
 ## Installation
 
-
 ```bash
-git clone https://github.com/RSginer/spec-kit-bdd
-specify extension add --dev ./spec-kit-bdd
+specify extension add bdd
 ```
 
 ## Usage
