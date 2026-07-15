@@ -71,6 +71,15 @@ The extension registers two optional hooks:
 
 Both hooks are `optional: true` — they ask for confirmation and can be skipped.
 
+## Examples
+
+| Example | Stack | Status |
+|---------|-------|--------|
+| [examples/vitest-react-todo](examples/vitest-react-todo) | React 19 + Vite + Vitest + `@amiceli/vitest-cucumber` | ✅ Available |
+| `examples/jest-react-todo` | React + Jest + Cucumber | 🚧 TODO |
+| `examples/nestjs-jest-todo` | NestJS + Jest + Cucumber | 🚧 TODO |
+| `examples/express-jest-todo` | Express + Jest + Cucumber | 🚧 TODO |
+
 ## Requirements
 
 - spec-kit `>=0.2.0`
