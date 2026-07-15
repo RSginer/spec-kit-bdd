@@ -2,6 +2,22 @@
 
 A [spec-kit](https://github.com/github/spec-kit) community extension that adds Behavior-Driven Development (BDD) and Acceptance Test-Driven Development (ATDD) to the spec-driven workflow.
 
+## Why
+
+Lean software development treats anything that doesn't directly deliver value to the user as waste — rework from misread requirements, code built against specs nobody validated, defects caught late instead of early. W. Edwards Deming's core teaching, later formalized for software in Mary and Tom Poppendieck's *Lean Software Development: An Agile Toolkit*, is to build quality into the process instead of inspecting for it afterward.
+
+BDD/ATDD is how spec-kit-bdd applies that here: acceptance criteria become executable Gherkin scenarios *before* implementation starts, and step definitions fail (RED) until the code they describe actually satisfies them (GREEN). Ambiguity in a spec surfaces as a failing scenario before any code is written, instead of as a bug report or a misaligned feature after the fact — the same reduction in waste from rework and overproduction that Deming's approach targets.
+
+### How this differs from writing tests the usual way
+
+| | spec-kit-bdd | Cucumber/Behave/SpecFlow standalone | spec-kit without BDD |
+|---|---|---|---|
+| Spec → scenario traceability | Generated automatically from the spec-kit spec, verified by `/speckit.bdd.verify` | Hand-written and maintained separately from the spec | None — spec and tests aren't connected |
+| When acceptance tests exist | Before implementation, as part of the spec-kit lifecycle (`/speckit.bdd.scaffold` runs pre-implement) | Whenever the team gets around to it | Not enforced at all |
+| Setup footprint | A YAML manifest + Markdown prompt files — no new runtime or language dependency | Full framework install and config, per language | N/A |
+| Coverage gaps | Surfaced automatically in `features/TRACEABILITY.md` | Manual auditing | No mechanism |
+| Workflow integration | Native hooks (`after_specify`, `before_implement`), optional and skippable | Bolted on outside the spec workflow | N/A |
+
 ## What it does
 
 | Command | What it produces |
