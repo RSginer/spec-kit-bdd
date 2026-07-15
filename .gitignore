@@ -7,3 +7,4 @@ dist/
 venv/
 *.local.yml
 docs/superpowers/
+node_modules/
