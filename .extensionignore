@@ -4,3 +4,4 @@ requirements-dev.txt
 docs/superpowers/
 .gitignore
 .extensionignore
+examples/
