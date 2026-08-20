@@ -1,0 +1,36 @@
+title: spec-kit-bdd
+description: >-
+  BDD & ATDD for GitHub Spec Kit. Acceptance criteria become executable
+  Gherkin scenarios before implementation starts, verified with a
+  traceability matrix.
+url: "https://rsginer.github.io"
+baseurl: "/spec-kit-bdd"
+repository: RSginer/spec-kit-bdd
+lang: en
+
+# Jekyll defaults to the "minima" theme when this key is absent, which
+# would pull in its own assets alongside ours. We ship a fully custom
+# layout/CSS, so disable the default theme explicitly.
+theme: null
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Keep the published site limited to the landing page + its assets.
+# Everything else in this repo (extension source, tests, examples, repo docs)
+# stays out of the Jekyll build.
+exclude:
+  - commands/
+  - tests/
+  - examples/
+  - docs/
+  - requirements-dev.txt
+  - CHANGELOG.md
+  - LICENSE
+  - extension.yml
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor/

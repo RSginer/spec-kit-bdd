@@ -8,3 +8,11 @@ venv/
 *.local.yml
 docs/superpowers/
 node_modules/
+
+# Jekyll (GitHub Pages site)
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.bundle/
+vendor/
+Gemfile.lock
