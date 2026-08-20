@@ -91,30 +91,41 @@ description: >-
     <div class="section-header">
       <span class="section-kicker">How it works</span>
       <h2>Spec → scenarios → tests → code</h2>
-      <p>Write acceptance tests before writing code, then verify coverage after.</p>
+      <p>The full spec-kit lifecycle, with three commands slotted in so tests exist before code.</p>
     </div>
 
     <div class="flow">
-      <div class="flow-step">
+      <div class="flow-step flow-step--purple">
         <span class="flow-num">1. SPEC</span>
         <p>Describe the behaviour with <code>/speckit.specify</code>.</p>
       </div>
       <div class="flow-arrow" aria-hidden="true">→</div>
-      <div class="flow-step">
+      <div class="flow-step flow-step--green">
         <span class="flow-num">2. BDD (Gherkin)</span>
-        <p>Specify examples in Gherkin with <code>/speckit.bdd.scenarios</code>.</p>
+        <p>Specify examples with <code>/speckit.bdd.scenarios</code> &mdash; RED.</p>
       </div>
       <div class="flow-arrow" aria-hidden="true">→</div>
-      <div class="flow-step">
+      <div class="flow-step flow-step--blue">
         <span class="flow-num">3. ATDD</span>
-        <p>Scaffold failing step definitions with <code>/speckit.bdd.scaffold</code>.</p>
+        <p>Scaffold failing steps with <code>/speckit.bdd.scaffold</code> &mdash; still RED.</p>
       </div>
       <div class="flow-arrow" aria-hidden="true">→</div>
-      <div class="flow-step">
-        <span class="flow-num">4. CODE</span>
-        <p>Implement with <code>/speckit.implement</code> until scenarios go green.</p>
+      <div class="flow-step flow-step--muted">
+        <span class="flow-num">4. PLAN</span>
+        <p>Standard spec-kit: <code>/speckit.plan</code> then <code>/speckit.tasks</code>.</p>
+      </div>
+      <div class="flow-arrow" aria-hidden="true">→</div>
+      <div class="flow-step flow-step--orange">
+        <span class="flow-num">5. CODE</span>
+        <p>Implement with <code>/speckit.implement</code> until GREEN.</p>
+      </div>
+      <div class="flow-arrow" aria-hidden="true">→</div>
+      <div class="flow-step flow-step--purple">
+        <span class="flow-num">6. VERIFY</span>
+        <p>Close the loop with <code>/speckit.bdd.verify</code>.</p>
       </div>
     </div>
+    <p class="flow-legend"><span class="dot" aria-hidden="true"></span>Steps 2, 3, and 6 are what spec-kit-bdd adds to your normal spec-kit flow.</p>
 
     <table class="produces-table">
       <thead>

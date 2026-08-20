@@ -342,15 +342,16 @@ section + section { border-top: 1px solid var(--border); }
   justify-content: center;
   gap: 8px;
   flex-wrap: wrap;
-  margin-bottom: 40px;
+  margin-bottom: 14px;
 }
 .flow-step {
-  flex: 1 1 160px;
-  max-width: 200px;
+  --accent: var(--text-muted);
+  flex: 1 1 150px;
+  max-width: 190px;
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 18px;
+  padding: 16px;
   text-align: left;
 }
 .flow-step .flow-num {
@@ -362,10 +363,30 @@ section + section { border-top: 1px solid var(--border); }
   margin-bottom: 6px;
 }
 .flow-step p { margin: 4px 0 0; color: var(--text-muted); font-size: 0.88rem; }
-.flow-step:nth-child(1) { --accent: var(--accent-purple); }
-.flow-step:nth-child(3) { --accent: var(--accent-green); }
-.flow-step:nth-child(5) { --accent: var(--accent-blue); }
-.flow-step:nth-child(7) { --accent: var(--accent-orange); }
+.flow-step--purple { --accent: var(--accent-purple); }
+.flow-step--green  { --accent: var(--accent-green); }
+.flow-step--blue   { --accent: var(--accent-blue); }
+.flow-step--orange { --accent: var(--accent-orange); }
+
+.flow-step--muted {
+  background: transparent;
+  border-style: dashed;
+}
+
+.flow-legend {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin: 0 0 40px;
+}
+.flow-legend .dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--text-muted);
+  margin-right: 4px;
+}
 
 .flow-arrow {
   align-self: center;
