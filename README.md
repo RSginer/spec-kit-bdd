@@ -107,3 +107,15 @@ Both hooks are `optional: true` — they ask for confirmation and can be skipped
 ## Contributing
 
 See [docs/usage.md](docs/usage.md) for full usage details and examples.
+
+### Running the website locally
+
+The [project website](https://rsginer.github.io/spec-kit-bdd/) (`index.md`, `_layouts/`, `assets/`) is a Jekyll site deployed by [.github/workflows/pages.yml](.github/workflows/pages.yml). To preview it locally:
+
+```bash
+bundle config set --local path 'vendor/bundle'
+bundle install
+bundle exec jekyll serve
+```
+
+Then open <http://localhost:4000>. `.ruby-version` pins the Ruby version; `Gemfile`/`Gemfile.lock` pin the same `github-pages` gem version GitHub builds with, so the local preview matches production.
