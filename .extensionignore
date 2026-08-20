@@ -5,3 +5,14 @@ docs/superpowers/
 .gitignore
 .extensionignore
 examples/
+
+# Exclude the GitHub Pages website (docs/ and its docs/usage.md stay --
+# those are real extension documentation, not site-specific)
+index.md
+_config.yml
+_layouts/
+assets/
+.github/
+Gemfile
+Gemfile.lock
+.ruby-version
