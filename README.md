@@ -4,6 +4,14 @@
 
 # spec-kit-bdd
 
+<p align="center">
+  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/github/license/RSginer/spec-kit-bdd?color=blue&style=flat-square"></a>
+  <a href="https://github.com/RSginer/spec-kit-bdd/releases"><img alt="Latest release" src="https://img.shields.io/github/v/tag/RSginer/spec-kit-bdd?label=release&style=flat-square"></a>
+  <a href="https://github.com/RSginer/spec-kit-bdd/actions/workflows/pages.yml"><img alt="Deploy site" src="https://img.shields.io/github/actions/workflow/status/RSginer/spec-kit-bdd/pages.yml?label=site&style=flat-square"></a>
+  <a href="https://github.com/github/spec-kit"><img alt="spec-kit compatibility" src="https://img.shields.io/badge/spec--kit-%3E%3D0.2.0-8b5cf6?style=flat-square"></a>
+  <a href="https://github.com/RSginer/spec-kit-bdd/pulls"><img alt="PRs welcome" src="https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square"></a>
+</p>
+
 A [spec-kit](https://github.com/github/spec-kit) community extension that adds Behavior-Driven Development (BDD) and Acceptance Test-Driven Development (ATDD) to the spec-driven workflow.
 
 ## Why?
