@@ -139,27 +139,39 @@ description: >-
     <div class="install-block">
       <p>Install the extension into an existing spec-kit project:</p>
       <pre><code>specify extension add bdd --from https://github.com/{{ site.repository }}/archive/refs/tags/v1.0.2.zip</code></pre>
+      <p>That adds six commands to spec-kit's own lifecycle. Here's the full workflow, spec to green tests:</p>
     </div>
 
     <div class="steps">
       <div class="step">
-        <h3>Generate Gherkin scenarios from your spec</h3>
-        <p>After running <code>/speckit.specify</code>, convert acceptance criteria to Gherkin. This creates <code>features/*.feature</code> files &mdash; review them, they define what the system must do.</p>
+        <h3>Write what you want to build</h3>
+        <p>Start a spec-kit feature the usual way &mdash; nothing BDD-specific yet.</p>
+        <pre><code>/speckit.specify</code></pre>
+      </div>
+      <div class="step">
+        <h3>Convert acceptance criteria to Gherkin</h3>
+        <p>Generates <code>features/*.feature</code> files from the spec you just wrote. Tests are written &mdash; <strong>RED</strong>. Review them, they define what the system must do.</p>
         <pre><code>/speckit.bdd.scenarios</code></pre>
       </div>
       <div class="step">
-        <h3>Scaffold step definitions before implementing</h3>
-        <p>Before writing any application code, generate <code>features/step_definitions/</code> (or the framework equivalent) with stubs that raise <code>NotImplementedError</code>. Your tests now exist and <strong>fail</strong> &mdash; as intended.</p>
+        <h3>Scaffold step definitions</h3>
+        <p>Generates step definition stubs that raise <code>NotImplementedError</code> (or the framework equivalent). Tests are now runnable &mdash; still <strong>RED</strong>.</p>
         <pre><code>/speckit.bdd.scaffold</code></pre>
       </div>
       <div class="step">
-        <h3>Implement until tests pass</h3>
-        <p>Write code until your scenarios go green:</p>
-        <pre><code>pytest tests/step_defs/ -v</code></pre>
+        <h3>Plan the implementation</h3>
+        <p>Back to standard spec-kit: break the spec into an implementation plan and a task list, now informed by the scenarios above.</p>
+        <pre><code>/speckit.plan
+/speckit.tasks</code></pre>
       </div>
       <div class="step">
-        <h3>Verify coverage</h3>
-        <p>Produce <code>features/TRACEABILITY.md</code>, showing which spec requirements are covered by scenarios and highlighting any gaps.</p>
+        <h3>Implement until every scenario passes</h3>
+        <p>Write code until your step definitions go <strong>GREEN</strong>.</p>
+        <pre><code>/speckit.implement</code></pre>
+      </div>
+      <div class="step">
+        <h3>Verify full spec coverage</h3>
+        <p>Produces <code>features/TRACEABILITY.md</code>, mapping every spec requirement to the scenario that covers it, and flags any gaps.</p>
         <pre><code>/speckit.bdd.verify</code></pre>
       </div>
     </div>
