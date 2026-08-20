@@ -10,9 +10,10 @@ docs/superpowers/
 node_modules/
 
 # Jekyll (GitHub Pages site)
+# Gemfile.lock is committed on purpose: CI (.github/workflows/pages.yml)
+# needs it for a reproducible, cacheable `bundle install`.
 _site/
 .jekyll-cache/
 .jekyll-metadata
 .bundle/
 vendor/
-Gemfile.lock
