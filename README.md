@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/images/hero.png" alt="spec-kit-bdd: SPEC → BDD (Gherkin) → ATDD → CODE workflow" width="100%">
+</p>
+
 # spec-kit-bdd
 
 A [spec-kit](https://github.com/github/spec-kit) community extension that adds Behavior-Driven Development (BDD) and Acceptance Test-Driven Development (ATDD) to the spec-driven workflow.
