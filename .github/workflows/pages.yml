@@ -44,7 +44,7 @@ jobs:
         run: |
           echo "google_site_verification: \"${GOOGLE_SITE_VERIFICATION}\"" > _config.ci.yml
         env:
-          GOOGLE_SITE_VERIFICATION: ${{ vars.GOOGLE_SITE_VERIFICATION }}
+          GOOGLE_SITE_VERIFICATION: ${{ secrets.GOOGLE_SITE_VERIFICATION }}
 
       - name: Build site
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}" --config _config.yml,_config.ci.yml
