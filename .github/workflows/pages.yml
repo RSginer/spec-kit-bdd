@@ -40,8 +40,14 @@ jobs:
         with:
           bundler-cache: true
 
+      - name: Write CI-only config overrides
+        run: |
+          echo "google_site_verification: \"${GOOGLE_SITE_VERIFICATION}\"" > _config.ci.yml
+        env:
+          GOOGLE_SITE_VERIFICATION: ${{ vars.GOOGLE_SITE_VERIFICATION }}
+
       - name: Build site
-        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}" --config _config.yml,_config.ci.yml
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

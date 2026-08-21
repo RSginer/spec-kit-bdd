@@ -6,6 +6,7 @@ dist/
 .venv/
 venv/
 *.local.yml
+_config.ci.yml
 docs/superpowers/
 node_modules/
 
