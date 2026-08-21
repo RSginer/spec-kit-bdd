@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "extensions": {
+    "bdd": {
+      "version": "1.0.2",
+      "source": "local",
+      "manifest_hash": "sha256:028c5a49c12855a7dde3cd64b8b2243f5fb2f91161b7daa1daabf3bf7e8a659c",
+      "enabled": true,
+      "priority": 10,
+      "registered_commands": {},
+      "registered_skills": [
+        "speckit-bdd-scenarios",
+        "speckit-bdd-scaffold",
+        "speckit-bdd-verify"
+      ],
+      "installed_at": "2026-08-21T07:58:05.294900+00:00"
+    }
+  }
+}
