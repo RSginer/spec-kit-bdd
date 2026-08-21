@@ -8,8 +8,8 @@
 
 ## What to implement
 
-The todo stubs in `todo.steps.ts` raise `Error` with a `Pending:` message. Replace
- each one with:
+The todo steps in `todo.steps.ts` exercise the REST API through SuperTest. Keep
+each step focused on:
 
 1. The corresponding REST API request or test-state setup
 2. An assertion verifying the expected HTTP response or response body

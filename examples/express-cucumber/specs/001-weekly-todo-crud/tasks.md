@@ -21,8 +21,8 @@ and validated as an incremental REST API slice.
 **Purpose**: Establish the source and test-support locations required by all
 weekly todo stories.
 
-- [ ] T001 Create the planned source directories and module files at `src/models/todo.ts`, `src/services/todo-service.ts`, and `src/routes/todos.ts`.
-- [ ] T002 Extend the Cucumber world in `features/support/world.ts` with the application client state and created-todo identifiers needed by REST step definitions.
+- [X] T001 Create the planned source directories and module files at `src/models/todo.ts`, `src/services/todo-service.ts`, and `src/routes/todos.ts`.
+- [X] T002 Extend the Cucumber world in `features/support/world.ts` with the application client state and created-todo identifiers needed by REST step definitions.
 
 ---
 
@@ -34,10 +34,10 @@ implementation.
 **Checkpoint**: The application can construct an isolated todo service and mount
 its `/todos` router without opening a listening socket.
 
-- [ ] T003 Define the `Todo`, `CompletionState`, and todo request/response types in `src/models/todo.ts`.
-- [ ] T004 Implement shared title, ISO-date, completion-state, and Monday-to-Sunday week validation in `src/services/todo-service.ts`.
-- [ ] T005 Create the `/todos` Express router and JSON error-response helpers in `src/routes/todos.ts`.
-- [ ] T006 Mount the `/todos` router from the application factory in `src/app.ts` while keeping process listening in `src/server.ts`.
+- [X] T003 Define the `Todo`, `CompletionState`, and todo request/response types in `src/models/todo.ts`.
+- [X] T004 Implement shared title, ISO-date, completion-state, and Monday-to-Sunday week validation in `src/services/todo-service.ts`.
+- [X] T005 Create the `/todos` Express router and JSON error-response helpers in `src/routes/todos.ts`.
+- [X] T006 Mount the `/todos` router from the application factory in `src/app.ts` while keeping process listening in `src/server.ts`.
 
 ---
 
@@ -52,10 +52,10 @@ lists return `200`, and invalid titles or dates return `400` without mutation.
 
 ### Implementation for User Story 1
 
-- [ ] T007 [US1] Implement application-scoped create and current-week list operations in `src/services/todo-service.ts`, including unique IDs and default `incomplete` state.
-- [ ] T008 [US1] Implement `POST /todos` and `GET /todos` handlers in `src/routes/todos.ts` using the service and contract response shapes.
-- [ ] T009 [US1] Replace the capture-related pending steps with SuperTest requests and response assertions in `features/step_definitions/todo.steps.ts`.
-- [ ] T010 [US1] Run the User Story 1 scenarios in `features/weekly-todo-capture.feature` and correct any implementation or step-definition defects in `src/services/todo-service.ts`, `src/routes/todos.ts`, and `features/step_definitions/todo.steps.ts`.
+- [X] T007 [US1] Implement application-scoped create and current-week list operations in `src/services/todo-service.ts`, including unique IDs and default `incomplete` state.
+- [X] T008 [US1] Implement `POST /todos` and `GET /todos` handlers in `src/routes/todos.ts` using the service and contract response shapes.
+- [X] T009 [US1] Replace the capture-related pending steps with SuperTest requests and response assertions in `features/step_definitions/todo.steps.ts`.
+- [X] T010 [US1] Run the User Story 1 scenarios in `features/weekly-todo-capture.feature` and correct any implementation or step-definition defects in `src/services/todo-service.ts`, `src/routes/todos.ts`, and `features/step_definitions/todo.steps.ts`.
 
 **Checkpoint**: User Story 1 is independently functional and demonstrates the
 MVP create/list workflow.
@@ -73,10 +73,10 @@ weekly dates return `400` without mutation, and unknown IDs return `404`.
 
 ### Implementation for User Story 2
 
-- [ ] T011 [US2] Add title/planned-date update and completion-state transition operations to `src/services/todo-service.ts` without changing the existing create/list behavior.
-- [ ] T012 [US2] Implement `PUT /todos/:id` and `PATCH /todos/:id` handlers in `src/routes/todos.ts` with `200`, `400`, and `404` contract responses.
-- [ ] T013 [US2] Replace the maintenance-related pending steps with SuperTest requests, created-ID tracking, and response assertions in `features/step_definitions/todo.steps.ts`.
-- [ ] T014 [US2] Run the User Story 2 scenarios in `features/weekly-todo-maintenance.feature` and correct defects in `src/services/todo-service.ts`, `src/routes/todos.ts`, and `features/step_definitions/todo.steps.ts`.
+- [X] T011 [US2] Add title/planned-date update and completion-state transition operations to `src/services/todo-service.ts` without changing the existing create/list behavior.
+- [X] T012 [US2] Implement `PUT /todos/:id` and `PATCH /todos/:id` handlers in `src/routes/todos.ts` with `200`, `400`, and `404` contract responses.
+- [X] T013 [US2] Replace the maintenance-related pending steps with SuperTest requests, created-ID tracking, and response assertions in `features/step_definitions/todo.steps.ts`.
+- [X] T014 [US2] Run the User Story 2 scenarios in `features/weekly-todo-maintenance.feature` and correct defects in `src/services/todo-service.ts`, `src/routes/todos.ts`, and `features/step_definitions/todo.steps.ts`.
 
 **Checkpoint**: User Stories 1 and 2 both remain independently functional.
 
@@ -93,10 +93,10 @@ IDs return `404`, and the subsequent current-week list preserves the right data.
 
 ### Implementation for User Story 3
 
-- [ ] T015 [US3] Add delete-by-ID behavior to `src/services/todo-service.ts` that removes only an existing todo and reports unknown IDs without mutation.
-- [ ] T016 [US3] Implement `DELETE /todos/:id` in `src/routes/todos.ts` with `204 No Content` and `404 Not Found` responses.
-- [ ] T017 [US3] Replace the removal-related pending steps with SuperTest requests and response assertions in `features/step_definitions/todo.steps.ts`.
-- [ ] T018 [US3] Run the User Story 3 scenarios in `features/weekly-todo-removal.feature` and correct defects in `src/services/todo-service.ts`, `src/routes/todos.ts`, and `features/step_definitions/todo.steps.ts`.
+- [X] T015 [US3] Add delete-by-ID behavior to `src/services/todo-service.ts` that removes only an existing todo and reports unknown IDs without mutation.
+- [X] T016 [US3] Implement `DELETE /todos/:id` in `src/routes/todos.ts` with `204 No Content` and `404 Not Found` responses.
+- [X] T017 [US3] Replace the removal-related pending steps with SuperTest requests and response assertions in `features/step_definitions/todo.steps.ts`.
+- [X] T018 [US3] Run the User Story 3 scenarios in `features/weekly-todo-removal.feature` and correct defects in `src/services/todo-service.ts`, `src/routes/todos.ts`, and `features/step_definitions/todo.steps.ts`.
 
 **Checkpoint**: All three user stories are independently functional and the full
 weekly todo CRUD contract is covered.
@@ -108,9 +108,9 @@ weekly todo CRUD contract is covered.
 **Purpose**: Validate the complete feature and keep the design artifacts aligned
 with the delivered behavior.
 
-- [ ] T019 [P] Run `npm run build` and resolve TypeScript errors in `src/` and `features/`.
-- [ ] T020 [P] Run `npm test` and confirm all existing health and weekly todo scenarios pass.
-- [ ] T021 [P] Run the commands and REST smoke checks in `specs/001-weekly-todo-crud/quickstart.md` and update `specs/001-weekly-todo-crud/contracts/todos-api.md` only if the implemented response contract differs.
+- [X] T019 [P] Run `npm run build` and resolve TypeScript errors in `src/` and `features/`.
+- [X] T020 [P] Run `npm test` and confirm all existing health and weekly todo scenarios pass.
+- [X] T021 [P] Run the commands and REST smoke checks in `specs/001-weekly-todo-crud/quickstart.md` and update `specs/001-weekly-todo-crud/contracts/todos-api.md` only if the implemented response contract differs.
 
 ---
 
