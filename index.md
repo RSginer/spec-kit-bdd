@@ -149,7 +149,7 @@ description: >-
 
     <div class="install-block">
       <p>Install the extension into an existing spec-kit project:</p>
-      <pre><code>specify extension add bdd --from https://github.com/{{ site.repository }}/archive/refs/tags/v1.0.2.zip</code></pre>
+      <pre><code>specify extension add bdd --from https://github.com/{{ site.repository }}/archive/refs/tags/v1.0.3.zip</code></pre>
       <p>That adds six commands to spec-kit's own lifecycle. Here's the full workflow, spec to green tests:</p>
     </div>
 

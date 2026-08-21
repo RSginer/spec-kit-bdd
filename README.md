@@ -42,18 +42,19 @@ Ambiguity in a spec surfaces as a failing scenario before any code is written, i
 
 **ATDD workflow:** write acceptance tests before writing code.
 
-```
-speckit.specify → speckit.bdd.scenarios → speckit.plan → speckit.tasks
-                                                                      ↓
-speckit.implement ← speckit.bdd.scaffold ←────────────────────────────
-       ↓
-speckit.bdd.verify
-```
+1. `/speckit.specify` — write what you want to build
+2. `/speckit.bdd.scenarios` — convert acceptance criteria to Gherkin (**RED**)
+3. `/speckit.bdd.scaffold` — generate step definition stubs (**still RED**)
+4. `/speckit.plan` + `/speckit.tasks` — plan the implementation
+5. `/speckit.implement` — write code until all scenarios pass (**GREEN**)
+6. `/speckit.bdd.verify` — confirm full spec coverage
+
+See [docs/usage.md](docs/usage.md) for the full command reference, or the [project website](https://rsginer.github.io/spec-kit-bdd/) for a visual walkthrough.
 
 ## Installation
 
 ```bash
-specify extension add bdd --from https://github.com/RSginer/spec-kit-bdd/archive/refs/tags/v1.0.2.zip
+specify extension add bdd --from https://github.com/RSginer/spec-kit-bdd/archive/refs/tags/v1.0.3.zip
 ```
 
 ## Usage
@@ -106,6 +107,7 @@ Both hooks are `optional: true` — they ask for confirmation and can be skipped
 | Example | Stack |
 |---------|-------|
 | [examples/vitest-react-todo](examples/vitest-react-todo) | React 19 + Vite + Vitest + `@amiceli/vitest-cucumber` |
+| [examples/express-cucumber](examples/express-cucumber) | Express 5 + TypeScript + `@cucumber/cucumber` |
 
 ## Requirements
 
